@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapping AI Assistant</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🗺️ Mapping AI Assistant</h1>
+      <p class="subtitle">AI-powered web tools at your fingertips</p>
+    </header>
+
+    <section class="tools-section">
+      <h2>🔧 Tools</h2>
+      <div class="tool-grid">
+        <button class="tool-btn" id="search-btn" data-tool="search">
+          <span class="tool-icon">🔍</span>
+          <span class="tool-name">Search</span>
+          <span class="tool-desc">Tavily API</span>
+        </button>
+        <button class="tool-btn" id="extract-btn" data-tool="extract">
+          <span class="tool-icon">📄</span>
+          <span class="tool-name">Extract</span>
+          <span class="tool-desc">Page Content</span>
+        </button>
+        <button class="tool-btn" id="map-btn" data-tool="map">
+          <span class="tool-icon">🗺️</span>
+          <span class="tool-name">Map</span>
+          <span class="tool-desc">Location Search</span>
+        </button>
+        <button class="tool-btn" id="crawl-btn" data-tool="crawl">
+          <span class="tool-icon">🕷️</span>
+          <span class="tool-name">Crawl</span>
+          <span class="tool-desc">Web Crawler</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="ai-section">
+      <h2>🤖 AI Skills</h2>
+      <div class="ai-grid">
+        <button class="ai-btn" id="summarize-btn" data-skill="summarize">
+          <span class="ai-icon">📝</span>
+          <span class="ai-name">Summarize</span>
+        </button>
+        <button class="ai-btn" id="factcheck-btn" data-skill="factcheck">
+          <span class="ai-icon">✓</span>
+          <span class="ai-name">Fact Check</span>
+        </button>
+        <button class="ai-btn" id="report-btn" data-skill="report">
+          <span class="ai-icon">📊</span>
+          <span class="ai-name">Create Report</span>
+        </button>
+        <button class="ai-btn" id="analyze-btn" data-skill="analyze">
+          <span class="ai-icon">📈</span>
+          <span class="ai-name">Analyze</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="features-section">
+      <h2>⚙️ Features</h2>
+      <div class="feature-list">
+        <div class="feature-item">
+          <label class="toggle-label">
+            <input type="checkbox" id="sticky-mode-toggle">
+            <span class="toggle-slider"></span>
+            <span class="feature-text">📌 Sticky Mode</span>
+          </label>
+          <p class="feature-desc">Keep results pinned on screen</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-info">
+            <span class="feature-text">🖱️ Right-click Menu</span>
+            <p class="feature-desc">Access tools from context menu</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="settings-section">
+      <h2>🔑 Settings</h2>
+      <div class="settings-form">
+        <label for="api-key">Tavily API Key:</label>
+        <input type="password" id="api-key" placeholder="Enter your Tavily API key">
+        <button id="save-key-btn" class="primary-btn">Save Key</button>
+        <p class="settings-note">Get your API key from <a href="https://tavily.com" target="_blank">tavily.com</a></p>
+      </div>
+    </section>
+
+    <footer>
+      <p class="version">Version 1.0.0</p>
+      <p class="tip">💡 Tip: Right-click on any page to access tools!</p>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

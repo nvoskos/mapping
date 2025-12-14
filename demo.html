@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Demo page for testing the Mapping Chrome Extension with AI capabilities">
+  <meta name="keywords" content="chrome extension, AI, web tools, mapping, search, extract, analyze">
+  <title>Mapping Extension Demo Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+
+    .container {
+      background: white;
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+      padding-bottom: 20px;
+      border-bottom: 3px solid #4285f4;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: #4285f4;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      font-size: 1.2em;
+      color: #666;
+    }
+
+    section {
+      margin: 40px 0;
+      padding: 30px;
+      background: #f8f9fa;
+      border-radius: 8px;
+      border-left: 4px solid #4285f4;
+    }
+
+    h2 {
+      font-size: 1.8em;
+      color: #333;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    h3 {
+      font-size: 1.3em;
+      color: #4285f4;
+      margin: 20px 0 10px 0;
+    }
+
+    p {
+      margin: 15px 0;
+      line-height: 1.8;
+    }
+
+    .highlight {
+      background: #fff3cd;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-weight: 500;
+    }
+
+    .test-section {
+      background: #e7f3ff;
+      border-left-color: #2196f3;
+    }
+
+    .info-box {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 15px 0;
+      border: 1px solid #ddd;
+    }
+
+    .emoji {
+      font-size: 1.5em;
+    }
+
+    ul, ol {
+      margin: 15px 0;
+      padding-left: 30px;
+    }
+
+    li {
+      margin: 8px 0;
+    }
+
+    .address {
+      font-style: normal;
+      color: #4285f4;
+      font-weight: 500;
+    }
+
+    .claim {
+      background: #fff9c4;
+      padding: 10px 15px;
+      border-left: 3px solid #ffc107;
+      margin: 10px 0;
+      border-radius: 4px;
+    }
+
+    .links-section a {
+      display: block;
+      color: #1a73e8;
+      text-decoration: none;
+      padding: 8px 12px;
+      margin: 5px 0;
+      background: white;
+      border-radius: 4px;
+      transition: all 0.2s;
+    }
+
+    .links-section a:hover {
+      background: #e8f0fe;
+      transform: translateX(5px);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 2px solid #e0e0e0;
+      color: #666;
+    }
+
+    .instruction {
+      background: #e8f5e9;
+      padding: 15px;
+      border-radius: 8px;
+      border-left: 4px solid #4caf50;
+      margin: 15px 0;
+    }
+
+    .instruction strong {
+      color: #2e7d32;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🗺️ Mapping Extension Demo Page</h1>
+      <p class="subtitle">Test all features of the Mapping Chrome Extension</p>
+    </header>
+
+    <div class="instruction">
+      <strong>📌 How to use this page:</strong> Right-click on any text, heading, or link to access the Mapping AI Assistant context menu. Try selecting different parts of this page to test various features!
+    </div>
+
+    <section class="test-section">
+      <h2><span class="emoji">🔍</span> Search Tool Test</h2>
+      <div class="info-box">
+        <h3>Instructions:</h3>
+        <ol>
+          <li>Select the text below: <span class="highlight">Artificial Intelligence and Machine Learning</span></li>
+          <li>Right-click and choose "Mapping AI Assistant" → "Search with Tavily"</li>
+          <li>View the search results in the panel that appears</li>
+        </ol>
+        <p><strong>Test query:</strong> Artificial Intelligence and Machine Learning</p>
+        <p>You can also try searching for: "Chrome Extension Development", "Web Scraping Techniques", or "Natural Language Processing"</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="emoji">📄</span> Extract Tool Test</h2>
+      <div class="info-box">
+        <h3>Instructions:</h3>
+        <ol>
+          <li>Right-click anywhere on this page</li>
+          <li>Select "Mapping AI Assistant" → "Extract Content"</li>
+          <li>View the extracted page structure including headings, links, and metadata</li>
+        </ol>
+        <p><strong>Expected output:</strong> Title, meta tags, all headings (H1, H2, H3), links, and images from this page</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="emoji">🗺️</span> Map Tool Test</h2>
+      <div class="info-box">
+        <h3>Test Locations:</h3>
+        <p>Select any of these locations and use the Map tool:</p>
+        <ul>
+          <li class="address">New York City, USA</li>
+          <li class="address">Eiffel Tower, Paris, France</li>
+          <li class="address">Tokyo Tower, Japan</li>
+          <li class="address">Sydney Opera House, Australia</li>
+          <li class="address">Big Ben, London, United Kingdom</li>
+        </ul>
+        <h3>Instructions:</h3>
+        <ol>
+          <li>Select one of the locations above</li>
+          <li>Right-click and choose "Mapping AI Assistant" → "Map Location"</li>
+          <li>The location will open in Google Maps</li>
+        </ol>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="emoji">🕷️</span> Crawl Tool Test</h2>
+      <div class="info-box">
+        <h3>Instructions:</h3>
+        <ol>
+          <li>Right-click anywhere on this page</li>
+          <li>Select "Mapping AI Assistant" → "Crawl Website"</li>
+          <li>View the crawl results showing internal links, external links, and resources</li>
+        </ol>
+        <h3>Sample Links on This Page:</h3>
+        <div class="links-section">
+          <a href="https://github.com/nvoskos/mapping">GitHub Repository</a>
+          <a href="https://developer.chrome.com/docs/extensions/">Chrome Extensions Documentation</a>
+          <a href="https://www.wikipedia.org">Wikipedia</a>
+          <a href="https://www.github.com">GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2><span class="emoji">📝</span> Summarize Tool Test</h2>
+      <div class="info-box">
+        <h3>Sample Text for Summarization:</h3>
+        <p>
+          The development of artificial intelligence has revolutionized numerous industries and continues to shape the future of technology. 
+          Machine learning algorithms can now process vast amounts of data with unprecedented speed and accuracy, enabling applications 
+          that were once thought impossible. Deep learning neural networks have achieved remarkable success in image recognition, 
+          natural language processing, and game playing. Important advances in AI research have led to significant improvements in 
+          healthcare diagnostics, autonomous vehicles, and financial forecasting. The key challenge moving forward is ensuring that 
+          AI systems are developed responsibly and ethically, with proper consideration for privacy, bias, and transparency. 
+          Essential safeguards must be implemented to prevent misuse while maximizing the benefits of this transformative technology. 
+          Scientists and policymakers worldwide are working to establish critical frameworks for AI governance and regulation.
+        </p>
+        <h3>Instructions:</h3>
+        <ol>
+          <li>Select the paragraph above (or any text on the page)</li>
+          <li>Right-click and choose "Mapping AI Assistant" → "Summarize"</li>
+          <li>View the summary with statistics (sentence count, compression ratio)</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2><span class="emoji">✓</span> Fact Check Tool Test</h2>
+      <div class="info-box">
+        <h3>Sample Claims to Fact Check:</h3>
+        <div class="claim">
+          The Earth is approximately 4.5 billion years old and is the third planet from the Sun in our solar system.
+        </div>
+        <div class="claim">
+          Water boils at 100 degrees Celsius at sea level and is composed of two hydrogen atoms and one oxygen atom.
+        </div>
+        <div class="claim">
+          The Great Wall of China is visible from space and was built over several centuries by different Chinese dynasties.
+        </div>
+        <h3>Instructions:</h3>
+        <ol>
+          <li>Select one of the claims above</li>
+          <li>Right-click and choose "Mapping AI Assistant" → "Fact Check"</li>
+          <li>View identified claims with confidence levels and verification recommendations</li>
+        </ol>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="emoji">📊</span> Create Report Tool Test</h2>
+      <div class="info-box">
+        <h3>Instructions:</h3>
+        <ol>
+          <li>Select any text section on this page (or don't select anything to analyze the entire page)</li>
+          <li>Right-click and choose "Mapping AI Assistant" → "Create Report"</li>
+          <li>View the generated report with multiple sections including overview, analysis, and summary</li>
+        </ol>
+        <p><strong>Tip:</strong> Try creating reports from different sections to see how the analysis changes!</p>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2><span class="emoji">📈</span> Analyze Tool Test</h2>
+      <div class="info-box">
+        <h3>Sample Text for Analysis:</h3>
+        <p>
+          Technology continues to evolve rapidly, transforming the way we communicate and work. Digital transformation has become 
+          essential for businesses seeking competitive advantages. Innovation drives progress across multiple sectors including 
+          healthcare, education, and finance. Automation and artificial intelligence are reshaping traditional workflows. 
+          Companies must adapt to changing market conditions and embrace new technologies. Cybersecurity remains a critical concern 
+          as systems become increasingly interconnected. Remote work has become more prevalent, requiring robust digital infrastructure. 
+          Data analytics provides valuable insights for strategic decision-making. Cloud computing offers scalability and flexibility 
+          for modern organizations. Continuous learning and skill development are necessary in the digital age.
+        </p>
+        <h3>Instructions:</h3>
+        <ol>
+          <li>Select the paragraph above (or any substantial text)</li>
+          <li>Right-click and choose "Mapping AI Assistant" → "Analyze"</li>
+          <li>View detailed statistics: word count, sentence count, top words, reading time, and complexity rating</li>
+        </ol>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="emoji">📌</span> Sticky Mode Test</h2>
+      <div class="info-box">
+        <h3>Instructions:</h3>
+        <ol>
+          <li>Right-click anywhere on this page</li>
+          <li>Select "Mapping AI Assistant" → "Toggle Sticky Mode"</li>
+          <li>A green indicator (📌 Sticky Mode ON) should appear in the bottom-right corner</li>
+          <li>Now perform any operation (e.g., Summarize) - the results will stay on screen</li>
+          <li>Toggle Sticky Mode off to return to normal behavior (results auto-dismiss after 30 seconds)</li>
+        </ol>
+        <p><strong>Alternative:</strong> You can also toggle Sticky Mode from the extension popup!</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="emoji">⚙️</span> Additional Features</h2>
+      <div class="info-box">
+        <h3>Draggable Panels</h3>
+        <p>All result panels can be dragged around the screen. Click and hold the panel header to move it.</p>
+        
+        <h3>Close Button</h3>
+        <p>Click the × button in the top-right corner of any panel to close it immediately.</p>
+        
+        <h3>Extension Popup</h3>
+        <p>Click the extension icon in your Chrome toolbar to access all features, configure settings, and save your Tavily API key.</p>
+        
+        <h3>Context Menu</h3>
+        <p>The right-click context menu shows different options based on what you're clicking:</p>
+        <ul>
+          <li><strong>On text selection:</strong> Search, Summarize, Fact Check, Analyze</li>
+          <li><strong>On page:</strong> Extract, Crawl, and all AI skills</li>
+          <li><strong>On links:</strong> Extract and Crawl options for the linked page</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      <p><strong>Mapping Chrome Extension</strong> - Version 1.0.0</p>
+      <p>Visit the <a href="https://github.com/nvoskos/mapping" target="_blank">GitHub Repository</a> for more information</p>
+      <p style="margin-top: 20px; color: #999; font-size: 0.9em;">
+        This demo page is designed to test all features of the Mapping extension.<br>
+        For best results, ensure you have the extension installed and a Tavily API key configured.
+      </p>
+    </footer>
+  </div>
+</body>
+</html>
