@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Web Assistant - Settings</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>AI Web Assistant Settings</h1>
+      <p class="subtitle">Configure your Tavily MCP integration</p>
+    </header>
+
+    <main>
+      <section class="section">
+        <h2>Tavily API Configuration</h2>
+        <p class="description">
+          Enter your Tavily API key to enable all features. Get your API key from
+          <a href="https://tavily.com" target="_blank">tavily.com</a>
+        </p>
+
+        <div class="form-group">
+          <label for="api-key">Tavily API Key</label>
+          <input
+            type="password"
+            id="api-key"
+            placeholder="Enter your Tavily API key..."
+            autocomplete="off"
+          >
+          <button id="toggle-visibility" class="icon-btn" title="Toggle visibility">👁️</button>
+        </div>
+
+        <div class="form-group">
+          <button id="save-btn" class="primary-btn">Save API Key</button>
+          <button id="test-btn" class="secondary-btn">Test Connection</button>
+        </div>
+
+        <div id="status-message" class="status-message hidden"></div>
+      </section>
+
+      <section class="section">
+        <h2>Feature Settings</h2>
+
+        <div class="setting-item">
+          <div class="setting-info">
+            <h3>Sticky Mode</h3>
+            <p>Show a persistent panel on all web pages with quick access to AI features</p>
+          </div>
+          <label class="toggle">
+            <input type="checkbox" id="sticky-mode">
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="setting-item">
+          <div class="setting-info">
+            <h3>Context Menu</h3>
+            <p>Enable right-click menu for quick access to tools</p>
+          </div>
+          <label class="toggle">
+            <input type="checkbox" id="context-menu" checked disabled>
+            <span class="slider"></span>
+          </label>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>About</h2>
+        <div class="about-info">
+          <p><strong>Version:</strong> 1.0.0</p>
+          <p><strong>MCP Server:</strong> https://mcp.tavily.com/mcp/</p>
+          <p><strong>Protocol:</strong> MCP 2024-11-05</p>
+        </div>
+
+        <div class="features-list">
+          <h3>Available Tools</h3>
+          <ul>
+            <li>🔍 <strong>Search</strong> - Real-time web search</li>
+            <li>📄 <strong>Extract</strong> - Content extraction</li>
+            <li>🗺️ <strong>Map</strong> - Website mapping</li>
+            <li>🕷️ <strong>Crawl</strong> - Web crawling</li>
+          </ul>
+
+          <h3>AI Skills</h3>
+          <ul>
+            <li>📝 <strong>Summarize</strong> - Text summarization</li>
+            <li>✅ <strong>Fact Check</strong> - Claim verification</li>
+            <li>📊 <strong>Create Report</strong> - Report generation</li>
+            <li>🔬 <strong>Analyze</strong> - Content analysis</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section danger-zone">
+        <h2>Danger Zone</h2>
+        <div class="setting-item">
+          <div class="setting-info">
+            <h3>Clear All Data</h3>
+            <p>Remove all stored data including API key and settings</p>
+          </div>
+          <button id="clear-data-btn" class="danger-btn">Clear Data</button>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Made with Tavily MCP • <a href="https://github.com" target="_blank">Documentation</a></p>
+    </footer>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>
