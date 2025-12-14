@@ -110,16 +110,16 @@ async function handleStickyModeToggle(event) {
   
   await chrome.storage.sync.set({ stickyMode: enabled });
   
-  // Notify all tabs
-  const tabs = await chrome.tabs.query({});
-  tabs.forEach(tab => {
-    chrome.tabs.sendMessage(tab.id, {
+  // Notify only the active tab
+  const [activeTab] = await chrome.tabs.query({ active: true, currentWindow: true });
+  if (activeTab) {
+    chrome.tabs.sendMessage(activeTab.id, {
       action: 'toggleStickyMode',
       enabled: enabled
     }).catch(() => {
       // Tab might not have content script loaded
     });
-  });
+  }
   
   showStatus(`Sticky Mode ${enabled ? 'enabled' : 'disabled'}`);
 }
@@ -139,10 +139,59 @@ async function saveApiKey() {
 
 // Show prompt dialog
 function showPrompt(message, callback) {
-  const input = prompt(message);
-  if (input !== null) {
-    callback(input.trim());
-  }
+  // Create modal
+  const modal = document.createElement('div');
+  modal.className = 'prompt-modal';
+  modal.innerHTML = `
+    <div class="prompt-content">
+      <h3>${message}</h3>
+      <input type="text" class="prompt-input" placeholder="Enter text..." autofocus>
+      <div class="prompt-buttons">
+        <button class="prompt-btn prompt-cancel">Cancel</button>
+        <button class="prompt-btn prompt-ok">OK</button>
+      </div>
+    </div>
+  `;
+  
+  document.body.appendChild(modal);
+  
+  const input = modal.querySelector('.prompt-input');
+  const okBtn = modal.querySelector('.prompt-ok');
+  const cancelBtn = modal.querySelector('.prompt-cancel');
+  
+  // Focus input
+  setTimeout(() => input.focus(), 100);
+  
+  // Handle OK
+  const handleOk = () => {
+    const value = input.value.trim();
+    modal.remove();
+    if (value) {
+      callback(value);
+    }
+  };
+  
+  // Handle Cancel
+  const handleCancel = () => {
+    modal.remove();
+  };
+  
+  okBtn.addEventListener('click', handleOk);
+  cancelBtn.addEventListener('click', handleCancel);
+  
+  // Handle Enter key
+  input.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+      handleOk();
+    }
+  });
+  
+  // Handle Escape key
+  modal.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      handleCancel();
+    }
+  });
 }
 
 // Show status message

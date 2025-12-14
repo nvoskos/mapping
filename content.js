@@ -168,14 +168,7 @@ function formatMapResults(data, query) {
   return `
     <p class="mapping-query">Location: <strong>${escapeHtml(data.location)}</strong></p>
     <p><a href="${escapeHtml(data.mapsUrl)}" target="_blank" class="mapping-button">Open in Google Maps</a></p>
-    <iframe 
-      width="100%" 
-      height="300" 
-      frameborder="0" 
-      style="border:0; margin-top: 10px;" 
-      src="https://www.google.com/maps/embed/v1/place?key=&q=${encodeURIComponent(data.location)}" 
-      allowfullscreen>
-    </iframe>
+    <p class="mapping-meta">Click the button above to view the location on Google Maps</p>
   `;
 }
 
